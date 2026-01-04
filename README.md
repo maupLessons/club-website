@@ -16,7 +16,8 @@ npm run stop
 
 ## Frontend (React) 
 
-Frontend is located in the client/ directory (React + Vite + TypeScript).
+
+Frontend is located in the client/ directory (React + Vite + TypeScript)
 
 > All commands below should be executed from the **root directory of the project**.
 
