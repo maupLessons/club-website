@@ -5,10 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from './auth.module.css';
 import axios from '../../services/api/axios';
 
+
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
 const REGISTER_URL = '/register';  //delete
+
 
  const Register = () => {
     const navigate = useNavigate();
@@ -55,6 +58,7 @@ const REGISTER_URL = '/register';  //delete
     useEffect(() => {
         setErrMsg("");
     }, [username, email, password, confirmPassword]);
+
 
 
 //     const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
@@ -117,6 +121,7 @@ const REGISTER_URL = '/register';  //delete
             errRef.current?.focus();
         }
     }
+
 
     return (
         <div className={styles.layout}>    

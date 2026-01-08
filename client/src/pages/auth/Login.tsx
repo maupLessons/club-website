@@ -5,7 +5,9 @@ import styles from './auth.module.css';
 import { useAuth } from "../../hooks/useAuth";
 import axios from '../../services/api/axios';
 
+
 const LOGIN_URL = '/auth';  //delete
+
 const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 
@@ -65,7 +67,9 @@ const Login = () => {
                 const accessToken = response?.data?.accessToken;
 
                 const rolesFromResponse = userFromResponse?.roles;
+
                 const roles = Array.isArray(rolesFromResponse) ? rolesFromResponse : [];
+
 
                 setAuth({
                     user: {
@@ -82,7 +86,7 @@ const Login = () => {
                 navigate("/", { replace: true });
 
             } catch (err: any) {
-                
+
                 if (!err?.response) {
                     setErrMsg("Сервер не відповідає. Спробуйте пізніше.");
                 } else if (err.response.status === 400) {
@@ -93,7 +97,6 @@ const Login = () => {
                     setErrMsg("Помилка входу. Спробуйте ще раз.");
                 }
 
-                
                 errRef.current?.focus();
             }
     };
